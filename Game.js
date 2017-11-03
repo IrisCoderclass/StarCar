@@ -2,6 +2,7 @@ var xCar; //Meest links boven
 var yCar; //Meest links boven
 var wheelSize;
 var speed;
+var lives = 5;
 
 function ster() {
   this.xPos = random(1000);
@@ -14,17 +15,17 @@ function setup() {
   xCar = 500;
   yCar = 500;
   wheelSize = 24;
-  speed = 5;
+  speed = 10;
 }
 
 function draw() {
     //Één cijfer geeft grijswaarden
     if (keyIsDown(RIGHT_ARROW)) {
-      speed = 5;
+      speed = 10;
       xCar += speed;
     }
     else if (keyIsDown(LEFT_ARROW)) {
-      speed = -5;
+      speed = -10;
       xCar += speed;
     }
     background(35,6,64);
@@ -33,6 +34,17 @@ function draw() {
     if (xCar > width || xCar < 0){
         speed = -speed;
     }
+    if (lives == 0){
+      xCar = 500;
+      yCar = 500;
+      alert("Game Over")
+    };
+    if (xCar > 1000){
+      lives = 0;
+    };
+    if (xCar < 0){
+      lives = 0;
+    };
 };
 
 function drawCar(xCar, yCar, wheelSize){
@@ -53,3 +65,9 @@ function drawCar(xCar, yCar, wheelSize){
     line(0, yCar + 21 + wheelSize/2, width, yCar + 21 + wheelSize/2); //Parameters: x1,y1,x2,y2
     //'width' is de breedte van je canvas
 }
+
+if (lives == 0){
+  xCar = 500;
+  yCar = 500;
+  alert("Game Over")
+};
