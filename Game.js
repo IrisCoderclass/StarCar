@@ -38,6 +38,7 @@ function draw() {
       xCar = 500;
       yCar = 500;
       alert("Game Over")
+      lives = 5
     };
     if (xCar > 1000){
       lives = 0;
