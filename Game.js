@@ -2,12 +2,26 @@ var xCar; //Meest links boven
 var yCar; //Meest links boven
 var wheelSize;
 var speed;
-var lives = 5;
+var lives = 1;
 
 function ster() {
-  this.xPos = random(1000);
-  this.yPos = 1000;
+  this.xPos = 200; // random(0,1000);
+  this.yPos = 1001;
+  this.yspeed = 3;
+
+  this.display = function(){
+    noStroke();
+    fill(255, 229, 0);
+    rect(this.xPos,this.yPos,20,20)
+    if (this.yPos > 1000) {
+      this.xPos = random(1000);
+      this.yPos = 0
+    if (this.yPos ==)
+    }
+  }
 }
+
+var ster1 = new ster();
 
 function setup() {
   //Canvas van 200 px bij 200 px
@@ -28,7 +42,16 @@ function draw() {
       speed = -10;
       xCar += speed;
     }
+    else if (keyIsDown(UP_ARROW)){
+      alert("Auto's kunnen niet vliegen.")
+    }
+    else if (keyIsDown(DOWN_ARROW)){
+      alert("Auto's kunnen niet graven.")
+    }
     background(35,6,64);
+    ster1.display();
+
+
     drawCar(xCar, yCar, wheelSize);
     //width is de breedte van het canvas
     if (xCar > width || xCar < 0){
@@ -40,7 +63,7 @@ function draw() {
       alert("Game Over")
       lives = 5
     };
-    if (xCar > 1000){
+    if (xCar > 900){
       lives = 0;
     };
     if (xCar < 0){
