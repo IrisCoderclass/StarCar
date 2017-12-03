@@ -117,7 +117,7 @@ function draw() {
       yCar += speed;
     }
     else if (keyIsDown(77)){
-      window.location = "menu.html"
+      window.location = "index.html"
     }
     background(35,6,64);
 

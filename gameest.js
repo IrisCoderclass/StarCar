@@ -111,7 +111,7 @@ function draw() {
       xCar += speed;
     }
     else if (keyIsDown(77)){
-      window.location = "menu.html"
+      window.location = "index.html"
     }
     else if (keyIsDown(UP_ARROW)){
       alert("Cars can't fly.")
@@ -174,7 +174,7 @@ function draw() {
       points = points + 1
     }
     if (points > 150){
-      window.location = "index.html"
+      window.location = "nm.html"
     }
 
 

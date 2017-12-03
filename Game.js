@@ -118,7 +118,7 @@ function draw() {
       alert("Cars can't dig.")
     }
     else if (keyIsDown(77)){
-      window.location = "menu.html"
+      window.location = "index.html"
     }
     else if (est1 == 10){
       window.location = "est1.html"
@@ -178,7 +178,7 @@ function draw() {
     }
     if (lives == 0){
       alert("Game Over you have " + points + " points.");
-      window.location = "index.html"
+      window.location = "nm.html"
     };
     if (xCar > 900){
       lives = 0;
